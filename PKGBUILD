@@ -1,7 +1,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=bluez-qt
-pkgver=5.3.1
+pkgver=5.11.0
 pkgrel=1
 pkgdesc='Qt wrapper for Bluez 5 DBus API'
 arch=(i686 x86_64)
@@ -11,7 +11,7 @@ depends=(qt5-declarative bluez)
 makedepends=(extra-cmake-modules)
 conflicts=(libbluedevil-frameworks)
 source=("http://download.kde.org/stable/plasma/${pkgver}/$pkgname-$pkgver.tar.xz")
-md5sums=('8af6a399bbecc58dd726daea9aa9c6b7')
+md5sums=('909827fc26098c7b4ab48c7228801e16')
 
 prepare() {
   mkdir -p build
