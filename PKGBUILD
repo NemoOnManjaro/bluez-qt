@@ -1,7 +1,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=bluez-qt
-pkgver=5.240.0.20231008
+pkgver=5.240.0.20231014
 pkgrel=1
 pkgdesc='Qt wrapper for Bluez 5 DBus API'
 arch=(x86_64)
