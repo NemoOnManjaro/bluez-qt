@@ -1,7 +1,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=bluez-qt
-pkgver=5.240.0.20231105
+pkgver=5.245.0
 pkgrel=1
 pkgdesc='Qt wrapper for Bluez 5 DBus API'
 arch=(x86_64)
@@ -18,15 +18,14 @@ makedepends=(doxygen
              qt6-tools)
 optdepends=('qt6-declarative: QML bindings')
 groups=(kf6)
-#source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
-makedepends+=(git)
-_commit=98bf8d0abb449c11357a9d0e045b6557b0daaba4
-source=(git+https://invent.kde.org/frameworks/$pkgname#commit=$_commit)
-sha256sums=('SKIP')
-validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB) # David Faure <faure@kde.org>
+source=(https://download.kde.org/unstable/frameworks/$pkgver/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('7e65c260b4908463f108b1872aa6666c80e528f60f83201c8c469013020af299'
+            'SKIP')
+validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB  # David Faure <faure@kde.org>
+              E0A3EB202F8E57528E13E72FD7574483BB57B18D) # Jonathan Esk-Riddell <jr@jriddell.org>
 
 build() {
-  cmake -B build -S $pkgname \
+  cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   cmake --build build
