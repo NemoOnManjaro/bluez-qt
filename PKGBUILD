@@ -18,13 +18,8 @@ makedepends=(doxygen
              qt6-tools)
 optdepends=('qt6-declarative: QML bindings')
 groups=(kf6)
-source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('d8a84cd33a1345301487391c6dc625e277b5a2544d7360e5f6eda02a34cc7558'
-            'SKIP')
-validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB # David Faure <faure@kde.org>
-              E0A3EB202F8E57528E13E72FD7574483BB57B18D # Jonathan Esk-Riddell <jr@jriddell.org>
-              90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1 # Nicolas Fella <nicolas.fella@kde.org>
-              )
+source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz)
+sha256sums=('d8a84cd33a1345301487391c6dc625e277b5a2544d7360e5f6eda02a34cc7558')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
